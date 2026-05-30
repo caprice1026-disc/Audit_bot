@@ -10,9 +10,6 @@ DANGEROUS_PERMISSION_KEYS = {
     "MANAGE_WEBHOOKS",
     "MENTION_EVERYONE",
     "CREATE_INSTANT_INVITE",
-    "VIEW_CHANNEL",
-    "SEND_MESSAGES",
-    "MANAGE_MESSAGES",
 }
 
 
@@ -29,7 +26,6 @@ class CategorySnapshot:
     category_id: str
     name: str
     overwrite_fingerprint: str
-    overwrite_permissions: set[str] = field(default_factory=set)
 
 
 @dataclass(slots=True)
@@ -38,7 +34,6 @@ class ChannelSnapshot:
     name: str
     permissions_synced: bool
     overwrite_fingerprint: str
-    overwrite_permissions: set[str] = field(default_factory=set)
     category: CategorySnapshot | None = None
 
 
